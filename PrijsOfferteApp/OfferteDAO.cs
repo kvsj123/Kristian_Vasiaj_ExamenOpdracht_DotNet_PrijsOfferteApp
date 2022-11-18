@@ -12,14 +12,15 @@ namespace PrijsOfferteApp
 {
     internal class OfferteDAO
     {
+        string infoConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+                                    "AttachDbFilename=C:\\Users\\krist\\source\\repos\\PrijsOfferteApp\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
+                                    "Integrated Security=True;" +
+                                    "Connect Timeout=30";
         public List<Offerte> searchTitel(String searchTherm)
         {
             List<Offerte> returnThese = new List<Offerte>();
 
-            using SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename=C:\\Users\\krist\\source\\repos\\PrijsOfferteApp\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
-                                    "Integrated Security=True;" +
-                                    "Connect Timeout=30");
+            using SqlConnection connection = new SqlConnection(infoConnection);
 
             connection.Open();
 
@@ -60,10 +61,7 @@ namespace PrijsOfferteApp
         {
             List<Bedrijf> returnThese = new List<Bedrijf>();
 
-            using SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename=C:\\Users\\krist\\source\\repos\\PrijsOfferteApp\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
-                                    "Integrated Security=True;" +
-                                    "Connect Timeout=30");
+            using SqlConnection connection = new SqlConnection(infoConnection);
 
             connection.Open();
 
@@ -103,10 +101,7 @@ namespace PrijsOfferteApp
         {
             List<Offerte> returnThese = new List<Offerte>();
 
-            using SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename=C:\\Users\\krist\\source\\repos\\PrijsOfferteApp\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
-                                    "Integrated Security=True;" +
-                                    "Connect Timeout=30");
+            using SqlConnection connection = new SqlConnection(infoConnection);
 
             connection.Open();
 
@@ -158,10 +153,7 @@ namespace PrijsOfferteApp
         {
             List<Bedrijf> returnThese = new List<Bedrijf>();
 
-            using SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename=C:\\Users\\krist\\source\\repos\\PrijsOfferteApp\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
-                                    "Integrated Security=True;" +
-                                    "Connect Timeout=30");
+            using SqlConnection connection = new SqlConnection(infoConnection);
 
             connection.Open();
 
@@ -206,10 +198,7 @@ namespace PrijsOfferteApp
 
             
 
-            using SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename=C:\\Users\\krist\\source\\repos\\PrijsOfferteApp\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
-                                    "Integrated Security=True;" +
-                                    "Connect Timeout=30");
+            using SqlConnection connection = new SqlConnection(infoConnection);
 
             connection.Open();
 
@@ -249,10 +238,7 @@ namespace PrijsOfferteApp
 
         internal int deleteBedrijf(int BedrijfId)
         {
-            SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename=C:\\Users\\krist\\source\\repos\\PrijsOfferteApp\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
-                                    "Integrated Security=True;" +
-                                    "Connect Timeout=30");
+            SqlConnection connection = new SqlConnection(infoConnection);
 
             connection.Open();
 
@@ -268,10 +254,7 @@ namespace PrijsOfferteApp
 
         internal int deleteKlant(int KlantId)
         {
-            SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename=C:\\Users\\krist\\source\\repos\\PrijsOfferteApp\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
-                                    "Integrated Security=True;" +
-                                    "Connect Timeout=30");
+            SqlConnection connection = new SqlConnection(infoConnection);
 
             connection.Open();
 
@@ -287,10 +270,7 @@ namespace PrijsOfferteApp
 
         internal int deleteOfferte(int OfferteId)
         {
-            SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename=C:\\Users\\krist\\source\\repos\\PrijsOfferteApp\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
-                                    "Integrated Security=True;" +
-                                    "Connect Timeout=30");
+            SqlConnection connection = new SqlConnection(infoConnection);
 
             connection.Open();
 
@@ -309,10 +289,7 @@ namespace PrijsOfferteApp
             List<Offerte> returnThese = new List<Offerte>();
             
 
-            using SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename=C:\\Users\\krist\\source\\repos\\PrijsOfferteApp\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
-                                    "Integrated Security=True;" +
-                                    "Connect Timeout=30");
+            using SqlConnection connection = new SqlConnection(infoConnection);
 
             connection.Open();
 
@@ -361,10 +338,7 @@ namespace PrijsOfferteApp
         {
             List<Bedrijf> returnThese = new List<Bedrijf>();
 
-            using SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename=C:\\Users\\krist\\source\\repos\\PrijsOfferteApp\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
-                                    "Integrated Security=True;" +
-                                    "Connect Timeout=30");
+            using SqlConnection connection = new SqlConnection(infoConnection);
 
             connection.Open();
 
@@ -415,10 +389,7 @@ namespace PrijsOfferteApp
         {
             List<Bedrijf> returnThese = new List<Bedrijf>();
 
-            using SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename=C:\\Users\\krist\\source\\repos\\PrijsOfferteApp\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
-                                    "Integrated Security=True;" +
-                                    "Connect Timeout=30");
+            using SqlConnection connection = new SqlConnection(infoConnection);
 
             connection.Open();
 
@@ -469,10 +440,7 @@ namespace PrijsOfferteApp
         {
             List<Klant> returnThese = new List<Klant>();
 
-            using SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename=C:\\Users\\krist\\source\\repos\\PrijsOfferteApp\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
-                                    "Integrated Security=True;" +
-                                    "Connect Timeout=30");
+            using SqlConnection connection = new SqlConnection(infoConnection);
 
             connection.Open();
 
@@ -523,10 +491,7 @@ namespace PrijsOfferteApp
         {
             List<Klant> returnThese = new List<Klant>();
 
-            using SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename=C:\\Users\\krist\\source\\repos\\PrijsOfferteApp\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
-                                    "Integrated Security=True;" +
-                                    "Connect Timeout=30");
+            using SqlConnection connection = new SqlConnection(infoConnection);
 
             connection.Open();
 

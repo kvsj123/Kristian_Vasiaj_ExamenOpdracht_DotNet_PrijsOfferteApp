@@ -20,6 +20,11 @@ namespace PrijsOfferteApp
         BindingSource bindingSourceKlanten = new BindingSource();
 
 
+        string infoConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+                                    "AttachDbFilename=C:\\Users\\krist\\source\\repos\\PrijsOfferteApp\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
+                                    "Integrated Security=True;" +
+                                    "Connect Timeout=30";
+
         public Form3()
         {
             InitializeComponent();
@@ -79,10 +84,7 @@ namespace PrijsOfferteApp
         private void ConnectDataGridOfferte()
         {
 
-            using SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename=C:\\Users\\krist\\source\\repos\\PrijsOfferteApp\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
-                                    "Integrated Security=True;" +
-                                    "Connect Timeout=30");
+            using SqlConnection connection = new SqlConnection(infoConnection);
 
             SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM Offertes", connection);
             DataTable dtbl = new DataTable();
@@ -94,10 +96,7 @@ namespace PrijsOfferteApp
         private void ConnectDataGridBedrijven()
         {
 
-            using SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename=C:\\Users\\krist\\source\\repos\\PrijsOfferteApp\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
-                                    "Integrated Security=True;" +
-                                    "Connect Timeout=30");
+            using SqlConnection connection = new SqlConnection(infoConnection);
 
             SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT * FROM Bedrijven", connection);
             DataTable dtbl1 = new DataTable();
@@ -109,10 +108,7 @@ namespace PrijsOfferteApp
         private void ConnectDataGridKlanten()
         {
 
-            using SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename=C:\\Users\\krist\\source\\repos\\PrijsOfferteApp\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
-                                    "Integrated Security=True;" +
-                                    "Connect Timeout=30");
+            using SqlConnection connection = new SqlConnection(infoConnection);
 
             SqlDataAdapter sqlDa2 = new SqlDataAdapter("SELECT * FROM Klanten", connection);
             DataTable dtbl2 = new DataTable();

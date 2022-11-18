@@ -20,6 +20,8 @@ namespace PrijsOfferteApp
     public partial class Form2 : Form
     {
 
+
+
         SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;" +
                                     "AttachDbFilename=C:\\Users\\krist\\source\\repos\\PrijsOfferteApp\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
                                     "Integrated Security=True;" +
