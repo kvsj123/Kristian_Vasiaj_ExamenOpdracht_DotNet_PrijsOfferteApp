@@ -21,7 +21,7 @@ namespace PrijsOfferteApp
 
 
         string infoConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename= {OfferteDatabase.mdf};" +
+                                    "AttachDbFilename= ..\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
                                     "Integrated Security=True;" +
                                     "Connect Timeout=30";
 

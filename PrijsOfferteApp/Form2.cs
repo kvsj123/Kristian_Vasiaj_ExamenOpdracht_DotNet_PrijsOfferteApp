@@ -23,7 +23,7 @@ namespace PrijsOfferteApp
 
 
         SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename= {OfferteDatabase.mdf};" +
+                                    "AttachDbFilename= ..\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
                                     "Integrated Security=True;" +
                                     "Connect Timeout=30");
 
