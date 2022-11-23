@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static LinqToDB.Common.Configuration;
 
 namespace PrijsOfferteApp
 {
@@ -19,9 +20,11 @@ namespace PrijsOfferteApp
         BindingSource bindingSourceBedrijven = new BindingSource();
         BindingSource bindingSourceKlanten = new BindingSource();
 
+        static string info = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\", "OfferteDatabase.mdf"));
+
 
         string infoConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename= ..\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
+                                    $"AttachDbFilename={info};" +
                                     "Integrated Security=True;" +
                                     "Connect Timeout=30";
 
@@ -64,7 +67,13 @@ namespace PrijsOfferteApp
             OfferteDAO offerteDAO = new OfferteDAO();
             if (tb_zoek.Text == "")
             {
-                MessageBox.Show("Vul een Offerte titel in!");
+                using SqlConnection connection = new SqlConnection(infoConnection);
+
+                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM Offertes", connection);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+
+                dataGridView1.DataSource = dtbl;
             }
             else
             {
@@ -119,17 +128,10 @@ namespace PrijsOfferteApp
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
+            int tel = dataGridView1.Rows.Cast<DataGridViewRow>().Select(row => row.Cells["Id"].Value).Count(x => x != null);
             
 
-           
-
-            if (e.RowIndex > -1 && e.ColumnIndex > -1)
-            {
-                dataGridView1.Rows[e.RowIndex].Selected = true;
-                MessageBox.Show("Er is geen offerte beschikbaar");
-            }
-            else
-            {
                 int rowSelected = dataGridView1.CurrentRow.Index;
 
 
@@ -145,7 +147,12 @@ namespace PrijsOfferteApp
 
 
                 dataGridView4.DataSource = bindingSourceBedrijven;
-            }
+
+                
+
+
+        
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -171,7 +178,13 @@ namespace PrijsOfferteApp
 
             if (textBox2.Text == "")
             {
-                MessageBox.Show("Vul een Klanten bedrijfnaam in!");
+                using SqlConnection connection = new SqlConnection(infoConnection);
+
+                SqlDataAdapter sqlDa2 = new SqlDataAdapter("SELECT * FROM Klanten", connection);
+                DataTable dtbl2 = new DataTable();
+                sqlDa2.Fill(dtbl2);
+
+                dataGridView3.DataSource = dtbl2;
             }
             else
             {
@@ -187,7 +200,13 @@ namespace PrijsOfferteApp
             OfferteDAO offerteDAO = new OfferteDAO();
             if (textBox1.Text == "")
             {
-                MessageBox.Show("Vul een jouw bedrijfnaam in!");
+                using SqlConnection connection = new SqlConnection(infoConnection);
+
+                SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT * FROM Bedrijven", connection);
+                DataTable dtbl1 = new DataTable();
+                sqlDa1.Fill(dtbl1);
+
+                dataGridView2.DataSource = dtbl1;
             }
             else
             {

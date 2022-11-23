@@ -9,6 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="OfferteDatabase.mdf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="OfferteDatabase.mdf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="iTextSharp" Version="5.5.13.3" />
     <PackageReference Include="linq2db" Version="4.3.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.0" />

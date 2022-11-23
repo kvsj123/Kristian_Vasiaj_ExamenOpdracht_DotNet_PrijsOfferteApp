@@ -12,8 +12,11 @@ namespace PrijsOfferteApp
 {
     internal class OfferteDAO
     {
+
+        static string info = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\", "OfferteDatabase.mdf"));
+
         string infoConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename= ..\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
+                                    $"AttachDbFilename={info};" +
                                     "Integrated Security=True;" +
                                     "Connect Timeout=30";
         public List<Offerte> searchTitel(String searchTherm)

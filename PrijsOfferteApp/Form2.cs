@@ -20,10 +20,10 @@ namespace PrijsOfferteApp
     public partial class Form2 : Form
     {
 
-
+        static string info = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\", "OfferteDatabase.mdf"));
 
         SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                                    "AttachDbFilename= ..\\PrijsOfferteApp\\OfferteDatabase.mdf;" +
+                                    $"AttachDbFilename={info};" +
                                     "Integrated Security=True;" +
                                     "Connect Timeout=30");
 
@@ -353,6 +353,7 @@ GeneratePdf();
                     cmd1.ExecuteNonQuery();
                     cmd2.ExecuteNonQuery();
 
+                    MessageBox.Show("De Offerte werd correct toegevoegd!");
                 }
                 catch (Exception ex)
                 {
@@ -470,6 +471,11 @@ GeneratePdf();
             {
                 e.Handled = true;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Environment.CurrentDirectory);
         }
     }
 }
